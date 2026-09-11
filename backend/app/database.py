@@ -3,7 +3,10 @@ from dotenv import load_dotenv
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
-from pymongo import MongoClient
+try:
+    from pymongo import MongoClient
+except ImportError:
+    MongoClient = None
 
 # Load environment variables from local .env file if present
 load_dotenv()
@@ -26,8 +29,12 @@ Base = declarative_base()
 
 # PyMongo setup (Schema models only for now)
 try:
-    mongo_client = MongoClient(MONGO_URL, serverSelectionTimeoutMS=1000)
-    mongo_db = mongo_client.get_database()
+    if MongoClient is not None:
+        mongo_client = MongoClient(MONGO_URL, serverSelectionTimeoutMS=1000)
+        mongo_db = mongo_client.get_database()
+    else:
+        mongo_client = None
+        mongo_db = None
 except Exception:
     mongo_client = None
     mongo_db = None
