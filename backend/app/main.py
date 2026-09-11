@@ -1,4 +1,14 @@
+import sys
 import os
+
+# Ensure backend directory and parent directory are in sys.path for both local and cloud container imports
+_current_dir = os.path.dirname(os.path.abspath(__file__))
+_backend_dir = os.path.dirname(_current_dir)
+_parent_dir = os.path.dirname(_backend_dir)
+for _d in (_backend_dir, _parent_dir, _current_dir):
+    if _d and _d not in sys.path:
+        sys.path.insert(0, _d)
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
@@ -16,6 +26,8 @@ Base.metadata.create_all(bind=engine)
 
 # Auto-migrate SQLite schema for new columns if using SQLite
 def run_sqlite_migrations():
+    if engine.name != "sqlite":
+        return
     try:
         with engine.connect() as conn:
             # Add account_status column if missing
