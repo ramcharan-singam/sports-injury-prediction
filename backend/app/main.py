@@ -144,8 +144,13 @@ app = FastAPI(
     version="1.0.0"
 )
 
-# Enable CORS for React frontend & Render deployments
+# Enable CORS for React frontend & Render/Vercel deployments
 default_origins = [
+    "https://sports-injury-prediction-git-main-vidhura.vercel.app",
+    "https://sports-injury-prediction-mi77s6xto-vidhura.vercel.app",
+    "https://sports-injury-prediction.vercel.app",
+    "https://sports-injury-prediction-6.onrender.com",
+    "https://injurysense-frontend.onrender.com",
     "http://localhost:3000",
     "http://localhost:5173",
     "http://127.0.0.1:3000",
@@ -161,6 +166,7 @@ else:
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
+    allow_origin_regex=r"https://.*\.vercel\.app|https://.*\.onrender\.com",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
