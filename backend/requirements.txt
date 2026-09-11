@@ -9,7 +9,7 @@ passlib[bcrypt]>=1.7.4
 bcrypt==4.0.1
 python-multipart>=0.0.9
 opencv-python-headless>=4.9.0
-rtmlib>=0.2.2
+rtmlib>=0.0.12
 onnxruntime>=1.17.0
 numpy>=1.26.0
 imageio>=2.34.0
