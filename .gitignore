@@ -1,0 +1,15 @@
+# Environment files (Keep private secrets safe!)
+.env
+.env.local
+*.env
+
+# Python & Node artifacts
+__pycache__/
+*.pyc
+*.db
+*.sqlite
+uploads/
+node_modules/
+dist/
+.idea/
+.vscode/

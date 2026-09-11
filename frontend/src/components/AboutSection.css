@@ -1,0 +1,398 @@
+/* AboutSection.css - Premium Sports Science About Section Styling */
+
+.about-section {
+  position: relative;
+  width: 100%;
+  min-height: 720px;
+  background-image: url('/assets/about_runner_hd.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  padding: 4.5rem 1.5rem;
+}
+
+/* Subtle transparent overlay for maximum readability while preserving full-bleed sharp image */
+.about-gradient-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.10);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  pointer-events: none;
+}
+
+html.dark .about-gradient-overlay {
+  background: rgba(7, 7, 9, 0.35);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+
+.about-content-wrapper {
+  position: relative;
+  z-index: 10;
+  max-width: 1420px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 600px;
+  gap: 3.5rem;
+}
+
+/* Top Section Header Styling */
+.about-header-container {
+  max-width: 780px;
+}
+
+.about-label-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.about-label-text {
+  font-family: 'Plus Jakarta Sans', monospace, sans-serif;
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #F97316;
+}
+
+.about-label-line {
+  width: 36px;
+  height: 3px;
+  background-color: #F97316;
+  border-radius: 999px;
+}
+
+.about-main-heading {
+  font-family: 'Outfit', 'Sora', sans-serif;
+  font-size: clamp(2.5rem, 5vw, 3.85rem);
+  font-weight: 900;
+  line-height: 1.02;
+  letter-spacing: -2px;
+  color: #0c1b35;
+  margin-bottom: 1.25rem;
+}
+
+html.dark .about-main-heading {
+  color: #ffffff;
+}
+
+.about-main-heading .text-orange {
+  color: #F97316;
+}
+
+.about-description-text {
+  font-size: clamp(1rem, 1.5vw, 1.15rem);
+  line-height: 1.6;
+  color: #26364d;
+  font-weight: 500;
+  max-width: 760px;
+}
+
+html.dark .about-description-text {
+  color: #cbd5e1;
+}
+
+/* Biomechanical HUD Tracking Graphics on the Right Leg/Shoe */
+.about-hud-container {
+  position: absolute;
+  top: 18%;
+  right: 14%;
+  width: 320px;
+  height: 320px;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.about-hud-circle-outer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 220px;
+  height: 220px;
+  transform: translate(-50%, -50%);
+  border: 2px dashed rgba(249, 115, 22, 0.7);
+  border-radius: 50%;
+  animation: hudRotate 16s linear infinite;
+}
+
+.about-hud-circle-inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 150px;
+  height: 150px;
+  transform: translate(-50%, -50%);
+  border: 3px solid rgba(249, 115, 22, 0.9);
+  border-radius: 50%;
+  box-shadow: 0 0 25px rgba(249, 115, 22, 0.45);
+  animation: hudPulse 3s ease-in-out infinite;
+}
+
+.about-hud-dot-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 14px;
+  height: 14px;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  border: 3px solid #F97316;
+  border-radius: 50%;
+  box-shadow: 0 0 16px #F97316;
+}
+
+.about-hud-dot-knee {
+  position: absolute;
+  top: 22%;
+  left: 30%;
+  width: 10px;
+  height: 10px;
+  background-color: #F97316;
+  border-radius: 50%;
+  box-shadow: 0 0 12px #F97316;
+}
+
+@keyframes hudPulse {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.85;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.08);
+    opacity: 1;
+    box-shadow: 0 0 35px rgba(249, 115, 22, 0.75);
+  }
+}
+
+@keyframes hudRotate {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+/* Feature Cards Grid Section */
+.about-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+  width: 100%;
+}
+
+.about-glass-card {
+  position: relative;
+  height: 285px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 15px 40px rgba(20, 40, 60, 0.12);
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+html.dark .about-glass-card {
+  background: rgba(18, 18, 26, 0.76);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+.about-glass-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 24px 50px rgba(20, 40, 60, 0.22);
+  border-color: rgba(255, 255, 255, 1);
+}
+
+html.dark .about-glass-card:hover {
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.6);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+/* Card Header: Left Icon Container + Right Step Number */
+.about-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.about-icon-box {
+  width: 62px;
+  height: 62px;
+  border-radius: 18px;
+  background-color: #221F1F;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+  transition: transform 0.3s ease;
+}
+
+.about-glass-card:hover .about-icon-box {
+  transform: scale(1.08);
+}
+
+/* Card Specific Accent Colors */
+.about-card-blue .about-icon-box {
+  color: #ffffff;
+}
+
+.about-card-blue .about-card-number {
+  color: #2563EB;
+}
+
+.about-card-blue .about-card-line {
+  background-color: #2563EB;
+}
+
+.about-card-blue .about-card-arrow-btn {
+  background-color: rgba(37, 99, 235, 0.12);
+  color: #2563EB;
+}
+
+.about-card-orange .about-icon-box {
+  color: #ffffff;
+}
+
+.about-card-orange .about-card-number {
+  color: #F97316;
+}
+
+.about-card-orange .about-card-line {
+  background-color: #F97316;
+}
+
+.about-card-orange .about-card-arrow-btn {
+  background-color: rgba(249, 115, 22, 0.12);
+  color: #F97316;
+}
+
+.about-card-green .about-icon-box {
+  background-color: #16A34A;
+  color: #ffffff;
+}
+
+.about-card-green .about-card-number {
+  color: #16A34A;
+}
+
+.about-card-green .about-card-line {
+  background-color: #16A34A;
+}
+
+.about-card-green .about-card-arrow-btn {
+  background-color: rgba(22, 163, 74, 0.12);
+  color: #16A34A;
+}
+
+.about-card-number {
+  font-family: 'Plus Jakarta Sans', monospace, sans-serif;
+  font-size: 2.2rem;
+  font-weight: 900;
+  opacity: 0.9;
+}
+
+/* Card Content: Title & Description */
+.about-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.about-card-title {
+  font-family: 'Outfit', 'Sora', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #0c1b35;
+  line-height: 1.25;
+}
+
+html.dark .about-card-title {
+  color: #ffffff;
+}
+
+.about-card-desc {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #526176;
+  font-weight: 500;
+}
+
+html.dark .about-card-desc {
+  color: #94a3b8;
+}
+
+/* Card Footer: Expandable Bottom Line + Arrow Button */
+.about-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 0.5rem;
+}
+
+.about-card-line {
+  width: 55px;
+  height: 4px;
+  border-radius: 999px;
+  transition: width 0.3s ease;
+}
+
+.about-glass-card:hover .about-card-line {
+  width: 75px;
+}
+
+.about-card-arrow-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.about-card-arrow-btn svg {
+  transition: transform 0.3s ease;
+}
+
+.about-glass-card:hover .about-card-arrow-btn svg {
+  transform: translateX(5px);
+}
+
+/* Responsive Rules for Tablet and Mobile */
+@media (max-width: 1024px) {
+  .about-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .about-hud-container {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .about-cards-grid {
+    grid-template-columns: 1fr;
+  }
+  .about-main-heading {
+    font-size: 2.2rem;
+  }
+  .about-glass-card {
+    height: auto;
+    min-height: 260px;
+  }
+}

@@ -1,0 +1,376 @@
+{
+  "categories": {
+    "acl": {
+      "name": "ACL Injury Risk",
+      "rules": [
+        {
+          "id": "acl_valgus_angle",
+          "name": "Knee Valgus Angle",
+          "how_measured": "Hip-knee-ankle vector vs. frontal plane at landing",
+          "threshold": 8.0,
+          "operator": ">=",
+          "unit": "degrees",
+          "evidence_type": "Direct",
+          "severity_weight": 1.0,
+          "sex_validation": {
+            "female": 1.0,
+            "male": 0.7
+          },
+          "recommendations": [
+            "Neuromuscular valgus control drills",
+            "Single-leg landing stabilization with knee alignment focus"
+          ]
+        },
+        {
+          "id": "acl_flexion_initial_contact",
+          "name": "Knee Flexion at Initial Contact",
+          "how_measured": "Thigh-shank angle at landing frame",
+          "threshold": 25.0,
+          "operator": "<",
+          "unit": "degrees",
+          "evidence_type": "Adapted proxy",
+          "severity_weight": 0.8,
+          "sex_validation": {
+            "female": 1.0,
+            "male": 1.0
+          },
+          "recommendations": [
+            "Soft-landing cueing to increase initial contact knee flexion",
+            "Eccentric quadriceps deceleration training"
+          ]
+        },
+        {
+          "id": "acl_trunk_lean",
+          "name": "Trunk Lateral Lean",
+          "how_measured": "Shoulder-hip line tilt deviation from baseline",
+          "threshold": 12.0,
+          "operator": ">=",
+          "unit": "degrees",
+          "evidence_type": "Athlete baseline",
+          "severity_weight": 0.6,
+          "sex_validation": {
+            "female": 1.0,
+            "male": 0.7
+          },
+          "recommendations": [
+            "Core anti-lateral flexion endurance (side planks)",
+            "Dynamic trunk control during change of direction"
+          ]
+        },
+        {
+          "id": "acl_valgus_asymmetry",
+          "name": "Knee Valgus Asymmetry (L/R)",
+          "how_measured": "Bilateral landing comparison",
+          "threshold": 10.0,
+          "operator": ">",
+          "unit": "percent",
+          "evidence_type": "Extrapolated",
+          "severity_weight": 0.7,
+          "sex_validation": {
+            "female": 0.7,
+            "male": 0.7
+          },
+          "recommendations": [
+            "Unilateral single-leg leg press & split squats",
+            "Bilateral balance correction drills"
+          ]
+        },
+        {
+          "id": "acl_prior_injury",
+          "name": "Prior ACL Injury Flag",
+          "how_measured": "Athlete profile historical record",
+          "threshold": 1.0,
+          "operator": "==",
+          "unit": "boolean",
+          "evidence_type": "Direct",
+          "severity_weight": 1.2,
+          "sex_validation": {
+            "female": 1.0,
+            "male": 1.0
+          },
+          "recommendations": [
+            "Priority physiotherapist screening clearance",
+            "Graft site capacity & hamstring co-contraction screening"
+          ]
+        }
+      ]
+    },
+    "hamstring": {
+      "name": "Hamstring Strain Risk",
+      "rules": [
+        {
+          "id": "hamstring_speed_asymmetry",
+          "name": "Knee Angular-Speed Asymmetry",
+          "how_measured": "L/R swing-phase velocity comparison",
+          "threshold": 15.0,
+          "operator": ">",
+          "unit": "percent",
+          "evidence_type": "Adapted proxy",
+          "severity_weight": 0.9,
+          "sex_validation": {
+            "female": 0.7,
+            "male": 1.0
+          },
+          "recommendations": [
+            "Isokinetic eccentric hamstring strength matching",
+            "Nordic hamstring curls focused on weaker side"
+          ]
+        },
+        {
+          "id": "hamstring_pelvic_tilt",
+          "name": "Anterior Pelvic Tilt Deviation",
+          "how_measured": "Pelvis-vertical angle during dynamic effort",
+          "threshold": 10.0,
+          "operator": ">=",
+          "unit": "degrees",
+          "evidence_type": "Athlete baseline",
+          "severity_weight": 0.7,
+          "sex_validation": {
+            "female": 0.7,
+            "male": 0.7
+          },
+          "recommendations": [
+            "Gluteus maximus & core activation drills",
+            "Hip flexor flexibility & posterior pelvic tilt control"
+          ]
+        },
+        {
+          "id": "hamstring_prior_injury",
+          "name": "Prior Hamstring Injury Flag",
+          "how_measured": "Athlete profile historical record",
+          "threshold": 1.0,
+          "operator": "==",
+          "unit": "boolean",
+          "evidence_type": "Direct",
+          "severity_weight": 1.3,
+          "sex_validation": {
+            "female": 1.0,
+            "male": 1.0
+          },
+          "recommendations": [
+            "Nordic hamstring eccentric strength evaluation",
+            "High-speed running exposure volume control"
+          ]
+        }
+      ]
+    },
+    "ankle": {
+      "name": "Ankle Instability & Sprain Risk",
+      "rules": [
+        {
+          "id": "ankle_dorsiflexion_rom",
+          "name": "Dorsiflexion ROM",
+          "how_measured": "Shank-foot angle during deep squat/landing",
+          "threshold": 34.0,
+          "operator": "<",
+          "unit": "degrees",
+          "evidence_type": "Direct",
+          "severity_weight": 1.0,
+          "sex_validation": {
+            "female": 1.0,
+            "male": 1.0
+          },
+          "recommendations": [
+            "Weight-bearing dorsiflexion ankle mobilization",
+            "Soleus & gastrocnemius static stretching"
+          ]
+        },
+        {
+          "id": "ankle_sway_variance",
+          "name": "Center-of-Mass Sway Variance",
+          "how_measured": "Post-landing stabilization variance",
+          "threshold": 0.15,
+          "operator": ">",
+          "unit": "index",
+          "evidence_type": "Adapted proxy",
+          "severity_weight": 0.7,
+          "sex_validation": {
+            "female": 0.7,
+            "male": 0.7
+          },
+          "recommendations": [
+            "Single-leg stance balance training on unstable surface",
+            "Peroneal muscle activation & proprioception drills"
+          ]
+        },
+        {
+          "id": "ankle_prior_injury",
+          "name": "Prior Ankle Sprain Flag",
+          "how_measured": "Athlete profile historical record",
+          "threshold": 1.0,
+          "operator": "==",
+          "unit": "boolean",
+          "evidence_type": "Direct",
+          "severity_weight": 1.4,
+          "sex_validation": {
+            "female": 1.0,
+            "male": 1.0
+          },
+          "recommendations": [
+            "Prophylactic ankle taping / bracing during high-load training",
+            "Chronic ankle instability (CAI) rehabilitation protocol"
+          ]
+        }
+      ]
+    },
+    "shoulder": {
+      "name": "Shoulder Overhead / Rotator Cuff Risk",
+      "rules": [
+        {
+          "id": "shoulder_gird",
+          "name": "Glenohumeral Internal Rotation Deficit (GIRD)",
+          "how_measured": "Dominant vs non-dominant internal rotation",
+          "threshold": 20.0,
+          "operator": ">=",
+          "unit": "degrees",
+          "evidence_type": "Direct",
+          "severity_weight": 1.0,
+          "sex_validation": {
+            "female": 0.4,
+            "male": 1.0
+          },
+          "recommendations": [
+            "Sleeper stretch & posterior capsule mobilization",
+            "Horizontal adduction stretching"
+          ]
+        },
+        {
+          "id": "shoulder_trom_deficit",
+          "name": "Total Rotational Motion (TROM) Deficit",
+          "how_measured": "Dominant vs non-dominant (IR+ER sum) deficit",
+          "threshold": 5.0,
+          "operator": ">",
+          "unit": "degrees",
+          "evidence_type": "Direct",
+          "severity_weight": 1.1,
+          "sex_validation": {
+            "female": 0.7,
+            "male": 1.0
+          },
+          "recommendations": [
+            "Total rotational ROM restoration exercises",
+            "Rotator cuff eccentric strengthening (Y-T-W drills)"
+          ]
+        },
+        {
+          "id": "shoulder_scapular_dyskinesis",
+          "name": "Scapular Dyskinesis",
+          "how_measured": "Scapular asymmetry during arm elevation",
+          "threshold": 0.25,
+          "operator": ">=",
+          "unit": "score",
+          "evidence_type": "Direct",
+          "severity_weight": 1.0,
+          "sex_validation": {
+            "female": 1.0,
+            "male": 0.7
+          },
+          "recommendations": [
+            "Serratus anterior & lower trapezius strengthening",
+            "Scapular winging co-contraction drills"
+          ]
+        }
+      ]
+    },
+    "lumbar": {
+      "name": "Lumbar & Low Back Risk",
+      "rules": [
+        {
+          "id": "lumbar_flexion_rom",
+          "name": "Lumbar Flexion ROM Deviation",
+          "how_measured": "Trunk forward-bend angle vs baseline",
+          "threshold": 15.0,
+          "operator": ">=",
+          "unit": "degrees",
+          "evidence_type": "Athlete baseline",
+          "severity_weight": 0.7,
+          "sex_validation": {
+            "female": 0.7,
+            "male": 0.7
+          },
+          "recommendations": [
+            "McGill Big 3 core stabilization routine",
+            "Lumbar flexion mobility control"
+          ]
+        },
+        {
+          "id": "lumbar_compensation_drift",
+          "name": "Trunk Compensation Drift",
+          "how_measured": "Early-vs-late-rep tilt trend during session",
+          "threshold": 0.2,
+          "operator": ">=",
+          "unit": "drift_ratio",
+          "evidence_type": "Adapted proxy",
+          "severity_weight": 0.8,
+          "sex_validation": {
+            "female": 1.0,
+            "male": 1.0
+          },
+          "recommendations": [
+            "Erectores spinae endurance training",
+            "Submaximal volume set caps to prevent trunk breakdown"
+          ]
+        },
+        {
+          "id": "lumbar_prior_injury",
+          "name": "Prior Low Back Pain Flag",
+          "how_measured": "Athlete profile historical record",
+          "threshold": 1.0,
+          "operator": "==",
+          "unit": "boolean",
+          "evidence_type": "Direct",
+          "severity_weight": 1.1,
+          "sex_validation": {
+            "female": 1.0,
+            "male": 1.0
+          },
+          "recommendations": [
+            "Physiotherapist lumbar spinal load evaluation",
+            "Avoid axial loading until symptoms clear"
+          ]
+        }
+      ]
+    },
+    "workload": {
+      "name": "Workload & Fatigue Overuse Risk",
+      "rules": [
+        {
+          "id": "workload_acwr_elevated",
+          "name": "Acute:Chronic Workload Ratio (ACWR)",
+          "how_measured": "EWMA method from training log ONLY",
+          "threshold": 1.5,
+          "operator": ">=",
+          "unit": "ratio",
+          "evidence_type": "Extrapolated",
+          "severity_weight": 1.2,
+          "sex_validation": {
+            "female": 1.0,
+            "male": 1.0
+          },
+          "recommendations": [
+            "Workload modification: deload volume by 20-30%",
+            "Schedule extra passive recovery day"
+          ]
+        },
+        {
+          "id": "workload_quality_decline",
+          "name": "Session Movement Quality Decline",
+          "how_measured": "Early-vs-late rep biomechanical worsening",
+          "threshold": 0.25,
+          "operator": ">=",
+          "unit": "decline_ratio",
+          "evidence_type": "Adapted proxy",
+          "severity_weight": 0.9,
+          "sex_validation": {
+            "female": 1.0,
+            "male": 1.0
+          },
+          "recommendations": [
+            "Reduce rep set length to maintain execution quality",
+            "Monitor central neuromuscular fatigue"
+          ]
+        }
+      ]
+    }
+  }
+}

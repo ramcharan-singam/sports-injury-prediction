@@ -1,0 +1,19 @@
+{
+  "model_name": "XGBoost Injury Risk Classifier",
+  "accuracy": 99.0,
+  "precision": 100.0,
+  "recall": 80.0,
+  "f1_score": 0.8889,
+  "roc_auc": 0.9689,
+  "features": [
+    "hip_flexion_angle",
+    "knee_flexion_angle",
+    "ankle_rotation_angle",
+    "angular_velocity",
+    "linear_acceleration",
+    "ground_reaction_force",
+    "postural_instability_index",
+    "biomechanical_deviation_score",
+    "fatigue_level"
+  ]
+}

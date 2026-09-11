@@ -1,0 +1,292 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
+}
+
+@layer base {
+  body {
+    background-color: var(--bg-main, #FAF7F2);
+    color: var(--text-main, #111111);
+    font-family: 'Plus Jakarta Sans', 'Outfit', system-ui, -apple-system, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', 'Sora', 'Plus Jakarta Sans', sans-serif;
+    letter-spacing: -0.035em;
+    color: var(--text-main, #111111);
+  }
+}
+
+.font-display {
+  font-family: 'Outfit', 'Sora', 'Plus Jakarta Sans', sans-serif;
+}
+
+.font-serif {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-main, #FAF7F2);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb, #D5CEBE);
+  border-radius: 3px;
+}
+
+/* Dynamic Accent Colors Specifications */
+:root,
+:root[data-accent="amber"] {
+  --accent-color: #F59E0B;
+  --accent-hover: #D97706;
+  --accent-light: #FBBF24;
+  --accent-bg: rgba(245, 158, 11, 0.12);
+  --accent-border: rgba(245, 158, 11, 0.35);
+  --accent-shadow: rgba(245, 158, 11, 0.25);
+  --accent-btn-text: #000000;
+}
+
+:root[data-accent="emerald"] {
+  --accent-color: #10b981;
+  --accent-hover: #059669;
+  --accent-light: #34d399;
+  --accent-bg: rgba(16, 185, 129, 0.15);
+  --accent-border: rgba(16, 185, 129, 0.35);
+  --accent-shadow: rgba(16, 185, 129, 0.25);
+  --accent-btn-text: #000000;
+}
+
+:root[data-accent="cyan"] {
+  --accent-color: #06b6d4;
+  --accent-hover: #0891b2;
+  --accent-light: #38bdf8;
+  --accent-bg: rgba(6, 182, 212, 0.15);
+  --accent-border: rgba(6, 182, 212, 0.35);
+  --accent-shadow: rgba(6, 182, 212, 0.25);
+  --accent-btn-text: #000000;
+}
+
+:root[data-accent="purple"] {
+  --accent-color: #8b5cf6;
+  --accent-hover: #7c3aed;
+  --accent-light: #c084fc;
+  --accent-bg: rgba(139, 92, 246, 0.15);
+  --accent-border: rgba(139, 92, 246, 0.35);
+  --accent-shadow: rgba(139, 92, 246, 0.25);
+  --accent-btn-text: #ffffff;
+}
+
+:root[data-accent="rose"] {
+  --accent-color: #f43f5e;
+  --accent-hover: #e11d48;
+  --accent-light: #fb7185;
+  --accent-bg: rgba(244, 63, 94, 0.15);
+  --accent-border: rgba(244, 63, 94, 0.35);
+  --accent-shadow: rgba(244, 63, 94, 0.25);
+  --accent-btn-text: #ffffff;
+}
+
+/* Theme 1: Light Warm Cream Theme (Default Template Style) */
+html.light,
+html:not(.dark) {
+  --bg-main: #FFF8F0;
+  --bg-card: #FFFFFF;
+  --bg-card-hover: #FDF9F3;
+  --bg-input: #FFFFFF;
+  --border-color: #EAE5DC;
+  --border-hover: #D5CEBE;
+  --text-main: #111111;
+  --text-muted: #666666;
+  --header-bg: rgba(255, 248, 240, 0.95);
+  --scrollbar-thumb: #D5CEBE;
+}
+
+html.light body,
+html:not(.dark) body {
+  background-color: #FFF8F0 !important;
+  background-image: url('/app_bg.png') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
+  color: #111111 !important;
+}
+
+html.light h1:not(.text-white):not([class*="text-white"]),
+html.light h2:not(.text-white):not([class*="text-white"]),
+html.light h3:not(.text-white):not([class*="text-white"]),
+html.light h4:not(.text-white):not([class*="text-white"]),
+html:not(.dark) h1:not(.text-white):not([class*="text-white"]),
+html:not(.dark) h2:not(.text-white):not([class*="text-white"]),
+html:not(.dark) h3:not(.text-white):not([class*="text-white"]),
+html:not(.dark) h4:not(.text-white):not([class*="text-white"]) {
+  color: #111111;
+}
+
+html.light .theme-text,
+html:not(.dark) .theme-text {
+  color: #111111 !important;
+}
+
+/* Theme 2: Dark Theme */
+html.dark {
+  --bg-main: #070709;
+  --bg-card: #0d0d12;
+  --bg-card-hover: #13131a;
+  --bg-input: #08080a;
+  --border-color: rgba(255, 255, 255, 0.08);
+  --border-hover: rgba(255, 255, 255, 0.18);
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --header-bg: rgba(8, 8, 10, 0.9);
+  --scrollbar-thumb: #1c1c24;
+}
+
+/* Theme 3: High Contrast Theme */
+html.theme-high-contrast {
+  --bg-main: #000000;
+  --bg-card: #000000;
+  --bg-card-hover: #111111;
+  --bg-input: #000000;
+  --border-color: #ffffff;
+  --border-hover: #ffff00;
+  --text-main: #ffffff;
+  --text-muted: #e2e8f0;
+  --header-bg: #000000;
+}
+
+/* Option dropdown menu styling across themes */
+select option,
+option {
+  background-color: var(--bg-card) !important;
+  color: var(--text-main) !important;
+}
+
+/* Global Dynamic Theme & Accent Rules */
+.theme-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  transition: all 0.2s ease;
+}
+
+.theme-card:hover {
+  border-color: var(--border-hover);
+}
+
+.theme-header {
+  background-color: var(--header-bg);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.theme-text {
+  color: var(--text-main);
+}
+
+.theme-muted {
+  color: var(--text-muted);
+}
+
+.theme-input {
+  background-color: var(--bg-input);
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+}
+
+/* Golden CTA Button (Matches Template "Book a call" Style) */
+.btn-golden,
+.accent-btn,
+button[type="submit"],
+.btn-primary {
+  background-color: #F59E0B !important;
+  color: #000000 !important;
+  font-weight: 700 !important;
+  border-radius: 0.5rem !important;
+  padding-left: 1.25rem !important;
+  padding-right: 1.25rem !important;
+  transition: all 0.2s ease !important;
+  box-shadow: 0 2px 4px rgba(245, 158, 11, 0.2) !important;
+}
+
+.btn-golden:hover,
+.accent-btn:hover,
+button[type="submit"]:hover,
+.btn-primary:hover {
+  background-color: #D97706 !important;
+  color: #000000 !important;
+  opacity: 0.96 !important;
+  transform: translateY(-1px) !important;
+}
+
+/* GLOBAL ACCENT OVERRIDES */
+.accent-text,
+.text-amber-500,
+.text-amber-400 {
+  color: var(--accent-color, #F59E0B) !important;
+}
+
+.accent-bg,
+.accent-badge {
+  background-color: var(--accent-bg) !important;
+  border-color: var(--accent-border) !important;
+  color: var(--accent-color) !important;
+}
+
+input[type="range"] {
+  accent-color: var(--accent-color) !important;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--accent-color) !important;
+}
+
+/* Floating Animation Keyframes for Sports Objects */
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(4deg);
+  }
+}
+
+@keyframes floatMedium {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-14px) rotate(-5deg);
+  }
+}
+
+@keyframes floatFast {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(6deg);
+  }
+}
+
+.animate-float-1 {
+  animation: floatSlow 6s ease-in-out infinite;
+}
+
+.animate-float-2 {
+  animation: floatMedium 5.5s ease-in-out infinite 0.7s;
+}
+
+.animate-float-3 {
+  animation: floatFast 6.5s ease-in-out infinite 1.4s;
+}
+

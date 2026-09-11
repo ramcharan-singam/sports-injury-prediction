@@ -1,0 +1,9 @@
+# Environment & Secrets (Keep private!)
+.env
+*.db
+*.sqlite
+uploads/
+__pycache__/
+*.pyc
+venv/
+.pytest_cache/
